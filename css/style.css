@@ -114,6 +114,14 @@ path.current-floor {
 	font-weight: normal;
 	font-size: 124px;
 }
+.modal-counter {
+	font-family: Bebas Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 29px;
+	color: #000000;
+}
 .button-primary {
 	background-color: #3596f5;
 	border-radius: 6px;
@@ -121,4 +129,100 @@ path.current-floor {
 	border: none;
 	padding: 16px 36px;
 	cursor: pointer;
+}
+.modal {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: opacity 0.2s;
+	opacity: 0;
+	transform: scale(0);
+}
+.is-open {
+	opacity: 1;
+	transform: scale(1);
+}
+.modal-dialog {
+	position: relative;
+	max-width: 1000px;
+	min-height: 565px;
+	background-color: #fff;
+	flex-grow: 1; /* Иначе всплывающее окно не видно */
+	display: flex;
+	opacity: 0;
+	transform: translateY(-10%);
+	transition: transform 0.2s, opacity 0.2s;
+	transition-delay: 0.2s;
+}
+.is-open > .modal-dialog {
+	opacity: 1;
+	transform: translateY(0);
+}
+.modal-image {
+	background-color: #ebebeb;
+	width: 60%;
+	text-align: center;
+	padding: 50px;
+}
+.modal-title {
+	font-family: 'Bebas Neue', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 29px;
+	margin-top: 0;
+	margin-bottom: 25px;
+}
+.modal-info {
+	padding: 50px 46px;
+	width: 40%;
+}
+.modal-alert {
+	color: #635854;
+	font-family: Roboto;
+	font-style: italic;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 19px;
+	margin-top: 56px;
+}
+.modal-close-button {
+	position: absolute;
+	top: 50px;
+	right: 27px;
+	border: none;
+	background-color: #fff;
+	cursor: pointer;
+}
+.flats path {
+	opacity: 0;
+	cursor: pointer;
+}
+.flats path:hover {
+	opacity: 1;
+}
+.flat-list {
+	padding: 0;
+	list-style: none;
+	margin-top: 55px;
+}
+.flat-item {
+	margin-bottom: 10px;
+}
+.flat-link {
+	text-decoration: none;
+	color: #635854;
+	font-family: Roboto;
+	font-size: 16px;
+	line-height: 19px;
+}
+.flat-link:hover {
+	color: #3596f5;
+	text-decoration: underline;
 }

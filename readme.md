@@ -7,6 +7,7 @@
 - HTML;
 - CSS;
 - Javascript
+- JQuery
 
 ### Применены следующие методы
 

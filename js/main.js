@@ -5,6 +5,24 @@ $(document).ready(function () {
 	let floorPath = $('.home-image path'); // Каждый отдельный этаж в SVG
 	let counterUp = $('.counter-up'); // Кнопка увеличения номера этажа
 	let counterDown = $('.counter-down'); // Кнопка уменьшения номера этажа
+	let modal = $('.modal');
+	let modalCloseButton = $('.modal-close-button');
+	let viewFlatsButton = $('.view-flats');
+
+	// Функция открытия/закрытия модального окна через константу
+	// const toggleModal = function () {
+	// 	modal.toggleClass('is-open');
+	// };
+
+	// Открытие модального окна при нажатии на этаж
+	floorPath.on('click', toggleModal);
+
+	// Открытие модального окна при нажатии на Кнопку "Смотреть квартиры на этаже"
+	viewFlatsButton.on('click', toggleModal);
+
+	// Закрытие модального окна при нажатии на крестик модального окна
+	modalCloseButton.on('click', toggleModal);
+
 	// Функция наведения мыши на этаж (подсветка)
 	floorPath.on('mouseover', function () {
 		floorPath.removeClass('current-floor'); // Удаляем активный класс у этажа
@@ -44,4 +62,9 @@ $(document).ready(function () {
 		}
 	});
 	// -----------------------------------------------------------------
+
+	// Функция открытия/закрытия модального окна
+	function toggleModal() {
+		modal.toggleClass('is-open');
+	}
 });

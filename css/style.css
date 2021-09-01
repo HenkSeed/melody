@@ -83,6 +83,8 @@ body {
 	align-items: center;
 	justify-content: space-between;
 }
+/* home-image - это SVG-изображение здания */
+/* path - это подсветка одного из этажей (есть у каждого этажа) */
 .home-image path {
 	opacity: 0;
 	cursor: pointer;
@@ -207,6 +209,10 @@ path.current-floor {
 .flats path:hover {
 	opacity: 1;
 }
+path.current-flat {
+	opacity: 1;
+}
+
 .flat-list {
 	padding: 0;
 	list-style: none;
@@ -225,4 +231,12 @@ path.current-floor {
 .flat-link:hover {
 	color: #3596f5;
 	text-decoration: underline;
+}
+.flat-link-hover {
+	color: #3596f5;
+	text-decoration: underline;
+}
+path.flats-hover {
+	/* color: #3596f5; */
+	opacity: 1;
 }

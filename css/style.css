@@ -116,6 +116,76 @@ path.current-floor {
 	font-weight: normal;
 	font-size: 124px;
 }
+/* ---------------------/MAIN-------------------------------------------------- */
+
+/* ---------------------FOOTER-------------------------------------------------- */
+.footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 171px;
+	margin-top: 99px;
+	background-color: #d7d7d7;
+	/* color: #fff; */
+	border-top: 4px solid #3596f5;
+	padding-right: 81px;
+	padding-left: 81px;
+}
+.footer-leftgroup {
+	display: flex;
+	align-items: center;
+}
+.footer-contacts {
+	margin-left: 37px;
+	margin-right: 59px;
+}
+.footer-text {
+	display: block;
+	margin-bottom: 4px;
+	color: #635854;
+	font-size: 14px;
+	line-height: 16px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 400;
+}
+.footer-phone {
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 17px;
+	line-height: 20px;
+	color: #635854;
+	text-decoration: none;
+}
+.social-group-item {
+	cursor: pointer;
+}
+.social-group-item:not(:last-child) {
+	padding-right: 15px;
+}
+.footer-menu {
+	list-style: none;
+	display: flex;
+	padding: 0;
+}
+.footer-menu-item:not(:last-child) {
+	margin-right: 20px;
+}
+.footer-menu-item {
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 19px;
+	text-decoration-line: underline;
+	color: #635854;
+	cursor: pointer;
+}
+
+/* ---------------------FOOTER-------------------------------------------------- */
+
+/* ---------------------MODAL-------------------------------------------------- */
 .modal-counter {
 	font-family: Bebas Neue;
 	font-style: normal;

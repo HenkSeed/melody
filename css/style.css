@@ -13,7 +13,10 @@
 }
 body {
 	font-family: 'Roboto', sans-serif;
+	min-width: 380px;
 }
+
+/* =========== HEADER ======================================== */
 .header {
 	background-color: #635854;
 	color: #fff;
@@ -28,6 +31,11 @@ body {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+.logo {
+	flex-grow: 1;
 }
 
 .navbar-menu {
@@ -54,6 +62,7 @@ body {
 }
 .navbar-contacts {
 	text-align: right;
+	margin-right: 20px;
 }
 .navbar-phone {
 	color: #fff;
@@ -62,12 +71,36 @@ body {
 	line-height: 20px;
 	text-decoration: none;
 }
+.burger-image {
+	color: #fff;
+	display: none;
+}
+/* --------- /HEADER------------------------------------------------------ */
+
+/* ============ MAIN ===================================================== */
 .main {
 	display: flex;
 	max-width: 1280px;
 	margin: auto;
 	padding-top: 54px;
 }
+/* === MAIN-IMAGE === */ /* ================= */
+
+/* home-image - это SVG-изображение здания */
+/* path - это подсветка одного из этажей (есть у каждого этажа) */
+.home-image path {
+	opacity: 0;
+	cursor: pointer;
+}
+.home-image path:hover {
+	opacity: 1;
+}
+path.current-floor {
+	opacity: 1;
+}
+/* --- /MAIN-IMAGE --- */ /* --------------- */
+
+/* === MAIN-INFO === */ /* ================= */
 .main-title {
 	font-family: 'Bebas Neue', sans-serif;
 	font-weight: normal;
@@ -82,18 +115,6 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
-}
-/* home-image - это SVG-изображение здания */
-/* path - это подсветка одного из этажей (есть у каждого этажа) */
-.home-image path {
-	opacity: 0;
-	cursor: pointer;
-}
-.home-image path:hover {
-	opacity: 1;
-}
-path.current-floor {
-	opacity: 1;
 }
 .counter-group {
 	display: flex;
@@ -116,9 +137,20 @@ path.current-floor {
 	font-weight: normal;
 	font-size: 124px;
 }
+.button-primary {
+	background-color: #3596f5;
+	border-radius: 6px;
+	color: #fff;
+	border: none;
+	padding: 16px 36px;
+	cursor: pointer;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+/* --- /MAIN-INFO --- */ /* ------------------- */
 /* ---------------------/MAIN-------------------------------------------------- */
 
-/* ---------------------FOOTER-------------------------------------------------- */
+/* ====================== FOOTER ================================================ */
 .footer {
 	display: flex;
 	align-items: center;
@@ -134,10 +166,14 @@ path.current-floor {
 .footer-leftgroup {
 	display: flex;
 	align-items: center;
+	justify-content: flex-start;
+	/* flex-grow: 2; */
 }
 .footer-contacts {
 	margin-left: 37px;
 	margin-right: 59px;
+	max-width: 33%;
+	/* flex-grow: 1; */
 }
 .footer-text {
 	display: block;
@@ -160,9 +196,10 @@ path.current-floor {
 }
 .social-group-item {
 	cursor: pointer;
+	/* padding-right: 15px; */
 }
 .social-group-item:not(:last-child) {
-	padding-right: 15px;
+	margin-right: 15px;
 }
 .footer-menu {
 	list-style: none;
@@ -182,26 +219,9 @@ path.current-floor {
 	color: #635854;
 	cursor: pointer;
 }
+/* --------------------- /FOOTER ---------------------------------------------- */
 
-/* ---------------------FOOTER-------------------------------------------------- */
-
-/* ---------------------MODAL-------------------------------------------------- */
-.modal-counter {
-	font-family: Bebas Neue;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 24px;
-	line-height: 29px;
-	color: #000000;
-}
-.button-primary {
-	background-color: #3596f5;
-	border-radius: 6px;
-	color: #fff;
-	border: none;
-	padding: 16px 36px;
-	cursor: pointer;
-}
+/* ======================= MODAL ---------------------------------------------- */
 .modal {
 	position: fixed;
 	left: 0;
@@ -220,6 +240,15 @@ path.current-floor {
 	opacity: 1;
 	transform: scale(1);
 }
+.modal-counter {
+	font-family: Bebas Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 29px;
+	color: #000000;
+}
+
 .modal-dialog {
 	position: relative;
 	max-width: 1000px;
@@ -309,4 +338,104 @@ path.current-flat {
 path.flats-hover {
 	/* color: #3596f5; */
 	opacity: 1;
+}
+/* --------------------- /MODAL ----------------------------------------------- */
+
+@media (max-width: 1100px) {
+	.footer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 171px;
+		margin-top: 99px;
+		background-color: #d7d7d7;
+		/* color: #fff; */
+		border-top: 4px solid #3596f5;
+		padding-right: 81px;
+		padding-left: 81px;
+		flex-direction: column;
+		justify-content: end;
+		height: 138px;
+	}
+	.navbar-item {
+		margin-right: 20px;
+		margin-left: 20px;
+	}
+}
+
+@media (max-width: 1020px) {
+	.main {
+		flex-direction: column;
+	}
+	.main-image {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.main-info {
+		margin-top: 50px;
+	}
+	.footer {
+		margin-top: 50px;
+	}
+}
+
+@media (max-width: 876px) {
+	.main {
+		padding-top: 0px;
+	}
+	.home-image {
+		width: 90%;
+		margin-right: 5%;
+		margin-left: 5%;
+		height: 500px;
+	}
+	.navbar-menu {
+		display: none;
+	}
+	.burger-image {
+		display: initial;
+	}
+}
+
+@media (max-width: 665px) {
+	.footer {
+		height: 250px;
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+	.footer-text {
+		margin-bottom: 0;
+		margin-top: 4px;
+	}
+	.footer-leftgroup {
+		flex-direction: column;
+		align-items: center;
+	}
+	.footer-contacts {
+		max-width: 100%;
+		text-align: center;
+		margin-right: auto;
+		margin-left: auto;
+		margin-bottom: 10px;
+	}
+	.footer-menu {
+		flex-direction: column;
+		text-align: center;
+		margin-right: 0;
+	}
+	.footer-menu-item:not(:last-child) {
+		margin: 0;
+	}
+}
+
+@media (max-width: 576px) {
+	.main-info {
+		margin-top: 0;
+	}
+}
+
+@media (max-width: 500px) {
+	.home-image {
+		height: 400px;
+	}
 }

@@ -27,12 +27,15 @@ body {
 
 .navbar {
 	max-width: 1280px;
+	width: 95%;
 	margin: auto;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin-right: 20px;
-	margin-left: 20px;
+	/* margin-right: 20px;
+	margin-left: 20px; */
+	padding-right: auto;
+	padding-left: auto;
 }
 .logo {
 	flex-grow: 1;
@@ -72,7 +75,6 @@ body {
 	text-decoration: none;
 }
 .burger-image {
-	color: #fff;
 	display: none;
 }
 /* --------- /HEADER------------------------------------------------------ */
@@ -83,6 +85,8 @@ body {
 	max-width: 1280px;
 	margin: auto;
 	padding-top: 54px;
+	padding-right: 2%;
+	padding-left: 2%;
 }
 /* === MAIN-IMAGE === */ /* ================= */
 
@@ -152,16 +156,24 @@ path.current-floor {
 
 /* ====================== FOOTER ================================================ */
 .footer {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	background-color: #d7d7d7;
+	border-top: 4px solid #3596f5;
 	height: 171px;
 	margin-top: 99px;
-	background-color: #d7d7d7;
+	display: flex;
+}
+.footer-wrapper {
+	width: 95%;
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
 	/* color: #fff; */
-	border-top: 4px solid #3596f5;
 	padding-right: 81px;
 	padding-left: 81px;
+	margin-right: auto;
+	margin-left: auto;
+
+	width: 1280px;
 }
 .footer-leftgroup {
 	display: flex;
@@ -221,7 +233,7 @@ path.current-floor {
 }
 /* --------------------- /FOOTER ---------------------------------------------- */
 
-/* ======================= MODAL ---------------------------------------------- */
+/* ======================= MODAL ============================================== */
 .modal {
 	position: fixed;
 	left: 0;
@@ -269,7 +281,7 @@ path.current-floor {
 	background-color: #ebebeb;
 	width: 60%;
 	text-align: center;
-	padding: 50px;
+	padding: 2%;
 }
 .modal-title {
 	font-family: 'Bebas Neue', sans-serif;
@@ -300,6 +312,9 @@ path.current-floor {
 	border: none;
 	background-color: #fff;
 	cursor: pointer;
+}
+.flats {
+	width: 100%;
 }
 .flats path {
 	opacity: 0;
@@ -342,15 +357,15 @@ path.flats-hover {
 /* --------------------- /MODAL ----------------------------------------------- */
 
 @media (max-width: 1100px) {
-	.footer {
+	.footer-wrapper {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		height: 171px;
-		margin-top: 99px;
+		/* margin-top: 99px; */
 		background-color: #d7d7d7;
 		/* color: #fff; */
-		border-top: 4px solid #3596f5;
+		/* border-top: 4px solid #3596f5; */
 		padding-right: 81px;
 		padding-left: 81px;
 		flex-direction: column;
@@ -374,9 +389,9 @@ path.flats-hover {
 	.main-info {
 		margin-top: 50px;
 	}
-	.footer {
+	/* .footer-wrapper {
 		margin-top: 50px;
-	}
+	} */
 }
 
 @media (max-width: 876px) {
@@ -397,19 +412,31 @@ path.flats-hover {
 	}
 }
 
-@media (max-width: 665px) {
+@media (max-width: 700px) {
 	.footer {
-		height: 250px;
+		height: 255px;
+	}
+	.modal-title {
+		font-size: calc(24px - 10%);
+		line-height: calc(29px - 10%);
+	}
+	.flat-link {
+		font-size: calc(14rem / 16);
+		line-height: calc(14rem / 16 * 19 / 16);
+	}
+
+	.footer-wrapper {
+		height: 100%;
 		padding-right: 20px;
 		padding-left: 20px;
-	}
-	.footer-text {
-		margin-bottom: 0;
-		margin-top: 4px;
 	}
 	.footer-leftgroup {
 		flex-direction: column;
 		align-items: center;
+	}
+	.footer-text {
+		margin-bottom: 0;
+		margin-top: 4px;
 	}
 	.footer-contacts {
 		max-width: 100%;
@@ -421,10 +448,24 @@ path.flats-hover {
 	.footer-menu {
 		flex-direction: column;
 		text-align: center;
-		margin-right: 0;
+		/* margin-right: 0; */
 	}
 	.footer-menu-item:not(:last-child) {
 		margin: 0;
+	}
+}
+@media (max-width: 645px) {
+	.modal-title {
+		font-size: calc(24px - 20%);
+		line-height: calc(29px - 20%);
+	}
+	.flat-link {
+		font-size: calc(16px - 20%);
+		line-height: calc(19px - 20%);
+	}
+	.modal-close-button > svg {
+		width: 20px;
+		height: 20px;
 	}
 }
 

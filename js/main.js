@@ -14,6 +14,28 @@ $(document).ready(function () {
 	let currentLink; // Сохраняет индекс выбранной в списке квартиры
 	const flatsLeave = document.querySelectorAll('.flats path'); // Все квартиры на плане
 	const listLeave = document.querySelectorAll('.flat-link'); // Все квартиры в списке
+	const navbarBurgerItem = document.querySelector('.navbar-burger-item');
+	const burgerModal = document.querySelector('.burger-modal');
+	const burgerCloseButton = document.querySelector('.burger-close-button');
+
+	// =====================================================================
+	// Открытие / закрытие бургер-меню
+
+	// Отслеживаем нажатие бургер-кнопки открытия бургер-меню
+	navbarBurgerItem.addEventListener('click', () => {
+		toggleBurgerItem();
+	});
+
+	// Отслеживаем нажатие кнопки закрытия бургер-меню
+	burgerCloseButton.addEventListener('click', () => {
+		toggleBurgerItem();
+	});
+
+	// Открываем / закрываем бургер-меню
+	toggleBurgerItem = function () {
+		burgerModal.classList.toggle('burger-modal-opened');
+	};
+	// ---------------------------------------------------------------------
 
 	// =====================================================================
 	// Убирает выделение квартир в списке, когда указатель мыши покидает план этажа
